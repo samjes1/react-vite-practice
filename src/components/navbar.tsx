@@ -1,4 +1,4 @@
-import './Navbar.css'; // Para estilos personalizados (opcional)
+import './Navbar.scss'; // Para estilos personalizados (opcional)
 
 const Navbar = () => {
   return (

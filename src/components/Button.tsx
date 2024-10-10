@@ -9,7 +9,7 @@ interface TitleProps {
 
 const Button: React.FC<TitleProps> = ({text = "Click me", onClick}) => {
     return (
-        <button onClick={() => alert("I was clicked")}>{text}</button>
+        <button onClick={() => onClick}>{text}</button>
     )
 };
 

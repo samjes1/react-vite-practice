@@ -1,9 +1,10 @@
+import Title from "../components/Title";
 
 
 const Home = () => {
     return (
         <div>
-            <h2>Dos historias Ocultas</h2>
+            <h2><Title text="Nada Interesante, por aqui ... mejor vete a otro lado"></Title></h2>
         </div >
     );
 

@@ -1,26 +1,42 @@
-/* import { useState } from 'react' */
 
-import "./App.css";
-import Button from "./components/Button";
-import Title from "./components/title";
+import { BrowserRouter as Router, Link, Outlet, Route, Routes, NavLink } from "react-router-dom";
+
+import "./App.scss";
+import Home from "./pages/Home";
+import Characters from "./pages/Characters";
+
+
 
 function App() {
-  const name = "soy tu nueva interfaz de navegación";
-  return (
-    <p>
-      Hola, {name}
-      <div>
-        <Title />
-       {/*  esto nos indica un error la cual hay que pasarle un texto ajuro, pero como esta por parametro tomara por default el que colocamos */}
-        <Title text="este es el texto del componente 1" />
-        <Title text="este es el texto del componente 2" />
-        <Title text="este es el texto del componente 3" />
-      </div>
-      <Button onClick={() => alert("Primer Boton")} />
-      <Button text="See more"/>
-    </p>
+ 
+  return <div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout/>}/>
+        <Route path="/Home" element={<Home />} />
+        <Route path="/Characters" element={<Characters/>} />
+      </Routes>
+    </Router>
+  </div>
+    
+    
+  
+}
 
-  );
+function Layout() {
+  return (
+    <>
+      <nav>
+        <NavLink to="/Home">Home</NavLink>
+        <NavLink to="/Characters">Characters</NavLink>
+
+      {/*   <link to="/">Home</link>
+        <link to="/Character">Characters</link> */}
+      </nav>
+      <Outlet/>
+    </>
+  )
+  
 }
 
 export default App;
