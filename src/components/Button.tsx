@@ -1,8 +1,15 @@
 import React from 'react';
 
-const Button: React.FC = () => {
+interface TitleProps {
+    text: string;
+    onClick?: () => void;
+}
+
+
+
+const Button: React.FC<TitleProps> = ({text = "Click me", onClick}) => {
     return (
-        <button>Click me</button>
+        <button onClick={() => alert("I was clicked")}>{text}</button>
     )
 };
 

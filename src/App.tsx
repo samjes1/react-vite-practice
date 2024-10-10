@@ -16,7 +16,8 @@ function App() {
         <Title text="este es el texto del componente 2" />
         <Title text="este es el texto del componente 3" />
       </div>
-      <Button/>
+      <Button onClick={() => alert("Primer Boton")} />
+      <Button text="See more"/>
     </p>
 
   );
